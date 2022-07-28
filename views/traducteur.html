@@ -1,0 +1,176 @@
+<div style="background-color: #fff;" data-type="left" data-scrollbar="visible:true" data-size="20%,20%,20%,0">
+    <div class="m center padding">
+        <h2>Menus</h2>
+        <div data---="textbox__common.search__type:search;placeholder:Rechercher;"></div>
+    </div>
+ 
+            
+            <div class="listing">
+            
+            <div data---="search__common.search__selector:figure">
+                <figure data-search="Traduire Anglais vers Francais">
+                    <section class="R" href="/traducteur/en_to_fr">
+                        <div>Traduire</div>
+                        <div class="help nmt">Traduction instantannee de l'anglais vers le francais</div>
+                    </section>
+                </figure>
+            </div>
+        </div>
+
+
+        <div class="listing">
+       
+        <div data---="search__common.search__selector:figure">
+            <figure data-search="Documentation">
+                <section class="R" href="/traducteur/docs/v1">
+                    <div>Documentation</div>
+                    <div class="help nmt">Document descriptif des differents fonctionalites</div>
+                </section>
+            </figure>
+        </div>
+    </div>
+
+
+    <div class="listing">
+       
+    <div data---="search__common.search__selector:figure">
+        <figure data-search="Etat du Serveur">
+            <section class="R" href="/traducteur/status">
+                <div>Etat du serveur</div>
+                <div class="help nmt">Etat du Serveur</div>
+            </section>
+        </figure>
+    </div>
+</div>
+     
+</div>
+
+<div style="background-color: #f0f0f0; border-left:2px solid #296b13;border-right:2px solid #296b13" data-type="main" data-scrollbar="visible:true">
+    <div style="background-color: #fafa; color:white;"  data---="button__null__exec:mobilemenu;icon:fa fa-bars;" class="menuButton hidden">Contenu</div>
+        <div class="menu hidden" data-bind="common.menus__template">
+            <script type="text/html" >
+                {{ foreach m in value }}
+                <div class="caption m" style="padding-left: 6px; font-weight:bold;" >
+                    <label data-id="{{m.name}}" >{{ m.name }} </label>
+                </div>
+                <div class="listing center">
+                    {{ foreach item in m.items}}
+                        <figure>
+                            <section class="R" href="/contenus/planning/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                                <div>{{ item.menu_name }}</div>
+                                <div class="help nmt"></div>
+                            </section>
+                        </figure>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </script>
+        </div>
+        <div class="m center padding">
+            <h2><b>Traducteur : </b> <b data-bind="common.title2__html"></b><b data-bind="common.title3__html"></b> </h2>
+        </div>
+    <div class="col-md-6">
+        <div  class="m">
+ 
+            <div data---="input___form.txt__type:multiline;required:true;placeholder:Text en Anglais" class="m"></div>
+
+            
+                <div data---="button__null__exec:translator_form;icon:fa fa-send" class="hidden custom_btn">Traduire</div>
+        </div>
+    
+    </div>
+    <div class="col-md-6">
+        <div  class="m">
+            <div class="row cbg">
+                <div data-bind="translate_result__html" data-exec="copy_translation" id="translate_result" class="contentbg exec">
+               
+                </div>
+                
+        </div>
+        </div>
+    
+    </div>
+
+<script>
+
+    var form = {};
+    var translate_result = '';
+    ENV('translator','@{CONF.translator}');
+  SET('planning.editor',{id : 'identidiant unique', time : '00:00'});
+  function set_local(key,value){
+    localStorage.setItem(key,value);  
+  };
+
+  function get_local(key){
+    var value = localStorage.getItem(key);
+    if(!value){
+        value = '';
+    };
+    return value;
+  };
+setTimeout(function(){
+    SET('common.title','Traducteur');
+},2000);
+ 
+    ROUTE('/traducteur/en_to_fr',function(){
+        
+      
+    });
+   function planning_operations (el){
+        var name = el.attrd2('id');
+        console.log(name);
+        AJAX('GET /contenus/planning/'+name,function(res){
+            console.log(res);
+            SET('planning.editor',res);
+        });
+    };
+    function operation_remove(el,path){
+        var id = el.attrd2('id');
+        SETTER(true, 'confirm', 'show', 'Voulez vous vraiment supprimer ce contenu? Cette operation est irreversible!', ['"check-circle" SUPPRIMER', 'ANNULER'], function() {
+            AJAX('GET /planning/operations?action=remove&id='+id,function(value,err,response){
+                if(!value.success){
+                    SETTER(true, 'message/warning','Erreur');
+                    return;
+                };
+                SETTER(true,'snackbar/success', 'Suppression terminee avec succes!');
+                NAV.refresh();
+            });
+        });
+    };
+    function operation_sauver(value,err,response){
+        if(!value.success){
+            SETTER(true, 'message/warning','Erreur');
+            return;
+        };
+        SETTER(true,'snackbar/success', 'Modification terminee avec succes!');
+        REDIRECT(`/contenus/planning/${get_local('parent')}/${get_local('name')}/${get_local('config_name')}`);
+    };
+    function form_exec(res,el){
+        console.log(res);
+        console.log(GET('form.message'));
+    };
+    function selectArchieves(el){
+        var content = common.archieves.findItem('id',$(el).prop('id'));
+        $('.contentbg').rclass('beforecontentbg');
+        $(el).tclass('beforecontentbg');
+        console.log(content);
+        SET('archieves.details',content);
+        //SET('archieves.details.source',content['payload']);
+
+    };
+
+    AJAXCONFIG('jsonizer', function(req) {
+        req.headers['Content-Type'] = 'application/json';
+        // req.type = 'GET';
+    });
+    
+    function translator_form (err,response){
+        if(!form.txt){
+            return ;
+        };
+        console.log(ENV('translator'));
+        AJAX('POST (jsonizer) {0}v1/translate/form NOENCRYPT'.format(ENV('translator')),{body : {text : "Hello world!"}},function(err,response){
+            console.log(err,response);
+        });
+    }
+</script>
