@@ -19,7 +19,7 @@ or directly using node executable (port is optional, default 8000)
 ```
 node index.js <port>
 ```
-__Routes__
+__Sitemap (Routes)__
 
 `/`                      ----> `Espace de validation`
 
