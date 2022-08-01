@@ -19,6 +19,17 @@ or directly using node executable (port is optional, default 8000)
 ```
 node index.js <port>
 ```
+__Routes__
+
+`/`                      ----> `Espace de validation`
+
+
+`/flow`                 ----> `Espace technique de maintenance et de programmation visuelle`
+
+`/evenements`           -----> `Espace de validation service foot`
+
+
+
 __Docker__:
 
 ```bash
