@@ -7,18 +7,20 @@
     "url": "https://github.com/totaljs/flow"
   },
   "dependencies": {
-    "@influxdata/influxdb-client": "^1.27.0",
+    "@influxdata/influxdb-client": "^1.28.0",
     "amqp-connection-manager": "^4.1.3",
     "awesome-qr": "^2.1.5-rc.0",
+    "better-sqlite3": "^7.6.2",
     "cheerio": "^1.0.0-rc.11",
     "mongodb": "^4.7.0",
     "mqtt": "^4.3.7",
+    "mquery": "^4.0.3",
     "mysql2": "^2.3.3",
     "node-schedule": "^2.1.0",
     "querybuilderpg": "^1.0.7",
     "rpi-gpio": "^2.1.7",
     "serialport": "^10.4.0",
-    "total4": "latest"
+    "total4": "^0.0.65"
   },
   "scripts": {
     "start": "node index.js 8000"
