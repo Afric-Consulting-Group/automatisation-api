@@ -58,7 +58,47 @@ D'autre part, l'application se sert du [__DATA SCRAPING__](https://www.rgdesign.
 
   Total.js flow est une application de programmation visuelle construite au dessus de total.js. Sa [__documentation__](https://docs.totaljs.com/flow) est aussi tres riche et detaillee. Si c'est votre premiere fois d'entendre parler de la programmation visuelle et de total.js FLOW 10, alors [__Cette serie de video youtube__](https://www.youtube.com/playlist?list=PL0TUP_nW6cmSA-QsjzgHTOfIRxHf0M4xk) va aussi vous aider.  (N'oubliez pas egalement de vous abonner, de liker et de partager 👨🏽‍💻😁🥳😅👨🏽‍💻).
   
-- [__Cheerio.js__](https://cheerio.js.org/)
-  Cheerio est une librairie javascript qui facilite le DATA SCRAPING. A l'interieur de totaljs flow nous avons un composan qui porte son nom. Son fonctionnement est comme suite il prend en entree un document HTML et retourne une instance de Jquery de ce document HTML permettant ainsi de manipuler a volonte et de recuperer les ressources textes de ce document HTML.  Si c'est votre premiere fois d'entendre parler de cheerio alors [__Cette video youtube__](https://www.youtube.com/watch?v=-e_QdRIKzYo) vous sera utile.
+  <a href="https://ibb.co/CQGRtBg"><img src="https://i.ibb.co/SBCFxNb/Screenshot-at-2022-09-10-10-36-48.png" alt="Screenshot-at-2022-09-10-10-36-48" border="0"></a>
   
+- [__Cheerio.js__](https://cheerio.js.org/)
+
+  Cheerio est une librairie javascript qui facilite le DATA SCRAPING. A l'interieur de totaljs flow nous avons un composan qui porte son nom. Son fonctionnement est comme suite il prend en entree un document HTML et retourne une instance de Jquery de ce document HTML permettant ainsi de manipuler a volonte et de recuperer les ressources textes de ce document HTML.  Si c'est votre premiere fois d'entendre parler de cheerio alors [__Cette video youtube__](https://www.youtube.com/watch?v=-e_QdRIKzYo) vous sera utile.
+
+  
+## Exemple d'automatisation par API
+
+### Meteo et Actualites
+
+- Meteo 
+
+  Dans le cas de la meteo nous avons utilise comme API [__Open wheather__](https://openweathermap.org/api). Il faut noter aussi que l'API utilise les coordonnees geographique de [__Google Maps__](https://www.google.com/maps/d/viewer?mid=1_FHxOZC_HTtuUvdI5ls43mkUR4s&ie=UTF8&hl=fr&msa=0&ll=12.849293000000007%2C-1.549071999999998&spn=1.231767%2C2.087402&z=9&om=1) pour pouvoir envoye les informations specifique a l'endroit voulu
+  
+  <a href="https://ibb.co/JQCRJ4X"><img src="https://i.ibb.co/GTFvSLg/Screenshot-at-2022-09-10-11-01-21.png" alt="Screenshot-at-2022-09-10-11-01-21" border="0"></a>
+
+- Actualites
+
+  Dans le cas des actualites nous avons utilise comme API [__Mediastack__](https://mediastack.com/documentation) pour recuperer les informations en temps reel sur les actualites du momde plus precisement celles des pays de la zone UEMOA
+  
+  <a href="https://ibb.co/2dXsHgz"><img src="https://i.ibb.co/yqLY7Wz/image.png" alt="image" border="0"></a>
+  
+  
+## Exemple d'automatisation par DATA SCRAPING
+
+### PMU et Horoscope
+
+- PMU
+
+  Dans le cas de PMU nous avons deux sites principalement sur lesquels nous collectons les donnees avec le data scraping a savoir [__Turf-fr__](https://www.turf-fr.com/)
+
+<a href="https://ibb.co/hWcJR9x"><img src="https://i.ibb.co/swCdvRp/image.png" alt="image" border="0"></a>
+
+et [__Canalturf__](https://www.canalturf.com/)
+
+<a href="https://ibb.co/BnkXcDK"><img src="https://i.ibb.co/8YkWN34/image.png" alt="image" border="0"></a>
+
+- Horoscope
+
+  Dans le cas de Horoscope nous faisons le data scrapingsur le site de [__Asiaflah__](https://www.asiaflash.com/) pour la collecte des donnees en fonction d'horoscope (Amour, Famille ....) ou de type d'horoscope (belier, balance ....)
+  
+  <a href="https://ibb.co/Xzf1w8w"><img src="https://i.ibb.co/wKZVvsv/image.png" alt="image" border="0"></a>
   
