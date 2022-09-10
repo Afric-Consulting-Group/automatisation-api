@@ -23,11 +23,12 @@ __Sitemap (Routes)__
 
 `/`                      ----> `Espace de validation`
 
+<a href="https://ibb.co/JqX2Q9d"><img src="https://i.ibb.co/VxXDmsN/image.png" alt="image" border="0"></a>
+
 
 `/flow`                 ----> `Espace technique de maintenance et de programmation visuelle`
 
-`/evenements`           -----> `Espace de validation service foot`
-
+<a href="https://ibb.co/F7YpWX9"><img src="https://i.ibb.co/f0NJS9b/image.png" alt="image" border="0"></a>
 
 
 __Docker__:
@@ -43,7 +44,7 @@ docker run -p 8000:8000 totalplatform/flow
 Afric Consulting Group est une entreprise specialisee dans la conception, la creation et la maintenance des services a valeurs ajoutees SVA (SVI, KIOSQUE MOBILE, CENTRE D'APPEL, USSD, SMS etc) pour les operateurs de telephonie mobile.Cette application intervient specifique dans le cadre des service KIOSQUE MOBILE. L'entreprise dispose d'une equipe de mise a jours des contenus de kiosque et cette application servira a automatiser les differentes taches repetives des agents de mise a jour.
 
 ## L'objectif de l'application.
-Le but principal de l'application est d'aider les agents de mise a jour dans leurs taches quotidiennes. La methode traditionnelle de mise a jour consitait a aller sur internet, parcourrir des dizaines de sites web, collecter les informations ou contenus, les trier, les analyser, les mettre sous format SMS, et les preparer au mieux pour etre diffuses a des millions d'abonnes des differents operateurs de telephonie mobile (TELECEL FASO, MOOV AFRICA BURKINA, MOOV AFRICA BENIN, MOOV AFRICA MALI). Ces taches sont repetives, fatiguantes et prennent enormement du temps si bien que la qualite et la quantite baisse au fil du temps. L'objectif donc de l'application est d'automatiser au maximum les differentes taches afin de faciliter la vie des agents de mise a jours et eventuellement avoir du temps et de l'energie pour d'autres inovations.
+Le but principal de l'application est d'aider les agents de mise a jour dans leurs taches quotidiennes. La methode traditionnelle de mise a jour consitait a aller sur internet, parcourrir des dizaines de sites web, collecter les informations ou contenus, les trier, les analyser, les mettre sous format SMS, et les preparer au mieux pour etre diffuses a des millions d'abonnes des differents operateurs de telephonie mobile (TELECEL FASO, MOOV AFRICA BURKINA, MOOV AFRICA BENIN, MOOV AFRICA MALI). Ces taches sont repetives, fatiguantes et prennent enormement du temps si bien que la qualite et la quantite baisse au fil du temps. L'objectif donc de l'application est d'automatiser au maximum les differentes taches afin de faciliter la vie des agents de mise a jour et eventuellement avoir du temps et de l'energie pour d'autres inovations.
 
 ## Fonctionnement global
 D'une part l'application consomme des API REST disponible sur internet afin de recuperer periodiquement les informations, les trier, les formater et conserver en base de donnee selon la logique business du service kiosque mobile.
@@ -74,12 +75,20 @@ D'autre part, l'application se sert du [__DATA SCRAPING__](https://www.rgdesign.
   Dans le cas de la meteo nous avons utilise comme API [__Open wheather__](https://openweathermap.org/api). Il faut noter aussi que l'API utilise les coordonnees geographique de [__Google Maps__](https://www.google.com/maps/d/viewer?mid=1_FHxOZC_HTtuUvdI5ls43mkUR4s&ie=UTF8&hl=fr&msa=0&ll=12.849293000000007%2C-1.549071999999998&spn=1.231767%2C2.087402&z=9&om=1) pour pouvoir envoye les informations specifique a l'endroit voulu
   
   <a href="https://ibb.co/JQCRJ4X"><img src="https://i.ibb.co/GTFvSLg/Screenshot-at-2022-09-10-11-01-21.png" alt="Screenshot-at-2022-09-10-11-01-21" border="0"></a>
+  
+ Exemple de flow des Meteos
+ 
+ <a href="https://ibb.co/MB6b77B"><img src="https://i.ibb.co/CP2qQQP/image.png" alt="image" border="0"></a>
 
 - Actualites
 
   Dans le cas des actualites nous avons utilise comme API [__Mediastack__](https://mediastack.com/documentation) pour recuperer les informations en temps reel sur les actualites du momde plus precisement celles des pays de la zone UEMOA
   
   <a href="https://ibb.co/2dXsHgz"><img src="https://i.ibb.co/yqLY7Wz/image.png" alt="image" border="0"></a>
+  
+Exemple de flow des Actualites des Regions
+
+<a href="https://ibb.co/31kB9zM"><img src="https://i.ibb.co/BLwq5Nr/image.png" alt="image" border="0"></a>
   
   
 ## Exemple d'automatisation par DATA SCRAPING
@@ -96,9 +105,17 @@ et [__Canalturf__](https://www.canalturf.com/)
 
 <a href="https://ibb.co/BnkXcDK"><img src="https://i.ibb.co/8YkWN34/image.png" alt="image" border="0"></a>
 
+Exemple de flow du PMU
+
+<a href="https://ibb.co/xJZg6WQ"><img src="https://i.ibb.co/NZRNK5z/image.png" alt="image" border="0"></a>
+
 - Horoscope
 
   Dans le cas de Horoscope nous faisons le data scrapingsur le site de [__Asiaflah__](https://www.asiaflash.com/) pour la collecte des donnees en fonction d'horoscope (Amour, Famille ....) ou de type d'horoscope (belier, balance ....)
   
   <a href="https://ibb.co/Xzf1w8w"><img src="https://i.ibb.co/wKZVvsv/image.png" alt="image" border="0"></a>
+  
+  Exemple de flow Horoscope Amour
+  
+  <a href="https://ibb.co/JdvNqrx"><img src="https://i.ibb.co/sPKhCs5/image.png" alt="image" border="0"></a>
   
